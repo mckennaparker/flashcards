@@ -41,8 +41,8 @@ const App = () => {
         )}
       </div>
       <div className="buttons">
-        <button onClick={() => {setCount(count > 0 ? count - 1 : 0); setState(state === "question" ? "answer" : "question")}}>⬅️</button>
-        <button onClick={() => {setCount(count < 9 ? count + 1 : 9); setState(state === "question" ? "answer" : "question")}}>➡️</button>
+        <button onClick={() => {setCount(count > 0 ? count - 1 : 0); setState("question")}}>⬅️</button>
+        <button onClick={() => {setCount(count < 9 ? count + 1 : 9); setState("question")}}>➡️</button>
       </div>
     </div>
   )
