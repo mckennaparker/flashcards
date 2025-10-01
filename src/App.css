@@ -1,6 +1,57 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
+}
+
+.Card {
+  margin: 2% auto;
+  padding: 2rem;
+  width: 60%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(128, 182, 253, 0.5);
+  border-radius: 3px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.Card:hover {
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.35);
+  transition: all 0.3s ease;
+}
+
+.card-content h3 {
+  text-decoration: underline;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+.easy {
+  background-color: rgba(76, 175, 80, 0.75); /* Green */
+}
+.medium {
+  background-color: rgba(255, 152, 0, 0.75); /* Orange */
+}
+.hard {
+  background-color: rgba(244, 67, 54, 0.75); /* Red */
+}
+
+.buttons button {
+  background-color: white;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.buttons button:hover {
+  box-shadow: 0 4px 8px rgba(100, 100, 100, 0.7);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
