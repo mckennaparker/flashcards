@@ -5,6 +5,7 @@ import Card from './components/Card'
 const App = () => {
   const [count, setCount] = useState(0);
   const [state, setState] = useState("question");
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState('');
 
   const cardsList = [
     { id: 1, question: "What is a long throw, usually over 30 yards, called?", answer: "Huck", difficulty: "easy" },
@@ -20,6 +21,22 @@ const App = () => {
   ];
 
   const currentCard = cardsList[count];
+
+  const checkAnswer = () => {
+    if (state === "answer") return; // Do nothing if the current state is "answer"
+    const userAnswer = document.querySelector('.textbox').value.toLowerCase().trim();
+    const correctAnswer = currentCard.answer.toLowerCase().trim();
+    if (userAnswer === correctAnswer) {
+      setIsAnswerCorrect('correct');
+    } else {
+      setIsAnswerCorrect('incorrect');
+    }
+  };
+
+  const resetTextbox = () => {
+    document.querySelector('.textbox').value = '';
+    setIsAnswerCorrect('');
+  };
 
   return (
     <div className="App">
@@ -40,9 +57,18 @@ const App = () => {
           </div>
         )}
       </div>
+      <div className="input">
+        <input
+          type="text"
+          placeholder="Type your answer here..."
+          className={`textbox ${isAnswerCorrect}`}
+          onKeyDown={(e) => { if (e.key === 'Enter') checkAnswer(); }}
+        />
+        <button className="submit" onClick={checkAnswer}>Submit</button>
+      </div>
       <div className="buttons">
-        <button onClick={() => {setCount(count > 0 ? count - 1 : 0); setState("question")}}>⬅️</button>
-        <button onClick={() => {setCount(count < 9 ? count + 1 : 9); setState("question")}}>➡️</button>
+        <button className={`previous ${count > 0 ? '' : 'hidden'}`} onClick={() => {setCount(count > 0 ? count - 1 : 0); setState("question"); resetTextbox();}}>Previous</button>
+        <button className={`next ${count < 9 ? '' : 'hidden'}`} onClick={() => {setCount(count < 9 ? count + 1 : 9); setState("question"); resetTextbox();}}>Next</button>
       </div>
     </div>
   )

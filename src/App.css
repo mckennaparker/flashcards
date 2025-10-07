@@ -38,10 +38,41 @@
   background-color: rgba(244, 67, 54, 0.75); /* Red */
 }
 
-.buttons button {
-  background-color: white;
+.textbox {
+  margin: 20px auto;
+  padding: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 16px;
+}
+.textbox.correct {
+  border-color: rgba(76, 175, 80, 0.75); /* Green */
+  background-color: rgba(76, 175, 80, 0.1);
+}
+.textbox.incorrect {
+  border-color: rgba(244, 67, 54, 0.75);
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+.submit {
+  background-color: #ffffff;
   border: none;
-  color: white;
+  color: #333;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.buttons button {
+  background-color: #ffffff;
+  border: none;
+  color: #333;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -54,4 +85,14 @@
   box-shadow: 0 4px 8px rgba(100, 100, 100, 0.7);
   transition: all 0.3s ease;
   cursor: pointer;
+}
+
+.previous.hidden {
+  background-color: rgba(240, 240, 240, 0.3);
+  color: rgba(200, 200, 200, 0.7);
+}
+
+.next.hidden {
+  background-color: rgba(240, 240, 240, 0.3);
+  color: rgba(200, 200, 200, 0.7);
 }
